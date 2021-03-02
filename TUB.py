@@ -14,6 +14,10 @@ CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 ####        https://discordpy.readthedocs.io/en/latest/index.html
 ####
 
+#   CompSci and Tech (testing guild) info
+bot_channel_id = 816185156679368736  # bot-experimentation
+test_guild_id = 813897870566490122  # compsci
+
 #TODO: add dependency folder
 
 # for the functions
@@ -29,11 +33,8 @@ bot = commands.Bot(command_prefix=";", description=description, intents=intents)
 client = discord.Client(intents=intents)
 # the above line is similar to client = discord.Client(intents=intents)
 
-#   CompSci and Tech (testing guild) info
-bot_channel_id = 816185156679368736  # bot-experimentation
-test_guild_id = 813897870566490122  # bot-experimentation
-testingUser_id = 0  # TODO: INSERT TESTING USER HERE
 
+  # TODO: INSERT TESTING USER HERE
 
 
 @client.event
@@ -48,10 +49,11 @@ I am now running, and (semi-)functional!""")
 
 
 @client.event
-async def on_ready():
+async def on_message(message):
 
     # Logic upon receiving a message is to be customised in on_message.py
-    await receive_message(message)
+    await receive_message(client, message)
 
 
-client.run(CLIENT_SECRET)  # THIS IS A SECRET FOR ONLY US
+# THIS IS A SECRET FOR ONLY US
+client.run(CLIENT_SECRET)
