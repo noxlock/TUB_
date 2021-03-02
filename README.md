@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Installation]: https://github.com/TravisEvans/TUB_#Installation
+- [Installation]: https://github.com/TravisEvans/TUB_#Installation	" Installation"
 
   
 
